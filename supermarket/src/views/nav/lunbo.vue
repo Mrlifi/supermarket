@@ -1,13 +1,13 @@
 <template>
   <div class="main-carousel">
     <div class="container">
-     
-        <div class="fade-item" v-for="(item,index) in fadeItems" v-show="index === curIndex" :key="index">
+      <transition-group name="fade" tag="div" class="fade">
+        <div class="fade-item" v-for="(item,index) in fadeItems" v-show="item.id === curIndex" :key="item.id">
           <a :href="item.link">
             <img :src="item.imgUrl" alt="" width="948px" height="418px">
           </a>
         </div>
-      
+      </transition-group>
       <div class="play-pre" @click="playPre">
         
         <span class="icon">＜</span>
@@ -30,11 +30,11 @@ export default {
       curIndex: 0,
       timeId: '',
       fadeItems: [
-        {imgUrl: '../../../static/img/goodsDetail/intro/1.jpg', link: 'https://item.mi.com/buyphone/redmi4x'},
-        {imgUrl: '../../../static/img/goodsDetail/intro/2.jpg', link: 'https://item.mi.com/product/10000030.html'},
-        {imgUrl: '../../../static/img/goodsDetail/intro/3.jpg', link: 'https://item.mi.com/product/10000029.html'},
-        {imgUrl: '../../../static/img/goodsDetail/intro/4.jpg', link: 'https://www.mi.com/buytv/'},
-        {imgUrl: '../../../static/img/goodsDetail/intro/5.jpg', link: 'https://www.mi.com/mibookair/'}
+        {id:0,imgUrl: '../../../static/img/goodsDetail/intro/1.jpg', link: 'https://item.mi.com/buyphone/redmi4x'},
+        {id:1,imgUrl: '../../../static/img/goodsDetail/intro/2.jpg', link: 'https://item.mi.com/product/10000030.html'},
+        {id:2,imgUrl: '../../../static/img/goodsDetail/intro/3.jpg', link: 'https://item.mi.com/product/10000029.html'},
+        {id:3,imgUrl: '../../../static/img/goodsDetail/intro/4.jpg', link: 'https://www.mi.com/buytv/'},
+        {id:4,imgUrl: '../../../static/img/goodsDetail/intro/5.jpg', link: 'https://www.mi.com/mibookair/'}
       ]
     }
   },
@@ -155,6 +155,11 @@ export default {
           background: rgba(255,255,255,0.5);
         }
       
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
 </style>
  
