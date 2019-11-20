@@ -1,13 +1,13 @@
 <template>
   <div class="main-carousel">
     <div class="container">
-      <transition-group name="fade" tag="div" class="fade">
+     
         <div class="fade-item" v-for="(item,index) in fadeItems" v-show="index === curIndex" :key="index">
           <a :href="item.link">
             <img :src="item.imgUrl" alt="" width="948px" height="418px">
           </a>
         </div>
-      </transition-group>
+      
       <div class="play-pre" @click="playPre">
         
         <span class="icon">＜</span>
@@ -155,11 +155,6 @@ export default {
           background: rgba(255,255,255,0.5);
         }
       
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s ease;
-}
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
+
 </style>
  
