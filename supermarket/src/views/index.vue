@@ -6,16 +6,21 @@
         <div class="nav">
             <Nav/>
         </div>
+        <div class="content">
+            <Content/>
+        </div>
     </div>
 </template>
 <script>
 import Search from './search'
 import Nav from './nav/homenav'
+import Contents from './content/index'
 export default {
     name:'index',
     components:{
         Search,
-        Nav
+        Nav,
+        Contents,
     }
 }
 </script>
