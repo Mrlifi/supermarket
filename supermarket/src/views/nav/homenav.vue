@@ -20,7 +20,6 @@
                   <div class="nav-first" @mouseenter="isNavEnter = true" @mouseleave="isNavEnter = false">
               <ul>
                  <li v-for="(item,index) in navFirst" :key="index"
-                   :class="{active: item.type === selected}"
                    @mouseenter="selected = item.type">
           <p>
             <span>{{item.name}}</span>
@@ -63,12 +62,6 @@ export default {
     name:'homenav',
     data(){
         return {
-          divhidden:false,
-            changstyle:'',
-            changstyle2:'',
-            changstyle3:'',
-            panel1:'false',
-            panel2:'false',
             nav:['秒杀','优惠券','闪购','拍卖','音乐专场','乐器店','全球购','金融'],
             navlistt:'所有商品分类',
             navlistts:['聚划算','真想购','乐器超市','音乐节','门票抢购'],
@@ -256,10 +249,6 @@ export default {
     text-indent:10px;
    }
 
-.active {
-  border-bottom:1px solid #ccc;
-  color:red;
-}
 
 .main-nav {
   width:240px;
@@ -267,6 +256,10 @@ export default {
   background-color:#ccffff;
   position:relative;
 
+}
+.main-nav li:hover {
+  background-color:blue;
+  color: white;
 }
 .nav-first {
   cursor:pointer;

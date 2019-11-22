@@ -7,7 +7,7 @@
             <Nav/>
         </div>
         <div class="content">
-            <Content/>
+            <Contents/>
         </div>
     </div>
 </template>
