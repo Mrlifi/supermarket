@@ -11,7 +11,7 @@
           <!-- 上边导航栏 -->
             <div class="nav-top">
               <div class="toplistl" v-html="navlistt"></div>
-              <div class="toplists" v-for="(item,ide) in navlistts" :key="ide" :class="{active:changstyle==ide}" @click="change(ide)">{{item}}</div>
+              <div class="toplists" v-for="(item,ide) in navlistts" :key="ide" :class="{active:changestyle==ide}" @click="change(ide)">{{item}}</div>
             </div>
             <!-- 侧边导航 -->
             <div class="nav-side">
@@ -62,6 +62,7 @@ export default {
     name:'homenav',
     data(){
         return {
+            changestyle:'',
             nav:['秒杀','优惠券','闪购','拍卖','音乐专场','乐器店','全球购','金融'],
             navlistt:'所有商品分类',
             navlistts:['聚划算','真想购','乐器超市','音乐节','门票抢购'],
@@ -177,7 +178,7 @@ export default {
     },
     methods:{
       change(ide){
-        this.changstyle=ide;
+        this.changestyle=ide;
       },
     //   change1(subin){
     //     this.changstyle2=subin;
